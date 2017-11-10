@@ -51,7 +51,8 @@
 
     //Initialize the StyleEditor
     var styleEditor = L.control.styleEditor({
-        position: "topleft"
+        position: "topleft",
+        useGrouping: false
     });
     map.addControl(styleEditor);
 
@@ -85,6 +86,9 @@
                 shapeOptions: {
                     color: '#662d91'
                 }
+            },
+            marker: {
+                icon: styleEditor.getDefaultIcon()
             }
         },
         edit: {
