@@ -1,5 +1,7 @@
 #!/bin/bash
 
+npm i
+
 grunt
 
 git config --global user.email "travis@travis-ci.org"
