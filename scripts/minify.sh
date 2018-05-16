@@ -1,6 +1,7 @@
 #!/bin/bash
 
 npm i
+npm install -g grunt
 
 grunt
 
