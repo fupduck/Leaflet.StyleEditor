@@ -16,7 +16,11 @@ if ! git diff-index --quiet HEAD --; then
     git config --global user.name "Travis CI"
 
     # push changes
-    exit travis-branch-commit
+    if travis-branch-commit; then
+        exit 0
+    else
+        exit 1
+    fi
 fi
 
 # terminate gracefully
