@@ -2,11 +2,11 @@ Leaflet.StyleEditor
 =============
 [![Build Status](https://travis-ci.org/dwilhelm89/Leaflet.StyleEditor.svg?branch=master)](https://travis-ci.org/dwilhelm89/Leaflet.StyleEditor)
 
-The [Leaflet](http://leafletjs.com/) StyleEditor allows to edit the style of any feature drawn within Leaflet.
+The [Leaflet](https://leafletjs.com/) StyleEditor allows to edit the style of any feature drawn within Leaflet.
 After activating the tool, the features can be edited by simply clicking them within the map.
 
-Check out the [Demo](http://dwilhelm89.github.io/Leaflet.StyleEditor/)!  
-And another [demo](http://dwilhelm89.github.io/Leaflet.StyleEditor/StyleEditorWithLeafletDraw.html) with [Leaflet.draw](https://github.com/Leaflet/Leaflet.draw).
+Check out the [Demo](https://dwilhelm89.github.io/Leaflet.StyleEditor/)!
+And another [demo](https://dwilhelm89.github.io/Leaflet.StyleEditor/StyleEditorWithLeafletDraw.html) with [Leaflet.draw](https://github.com/Leaflet/Leaflet.draw).
 
 Usage
 -----
@@ -103,13 +103,27 @@ map.on('styleeditor:changed', function(element){
 });
 ````
 
-Bower
-----
-Leaflet.StyleEditor is also a registered package in [Bower](http://bower.io/) (based on [nodejs](http://nodejs.org/)). Integrate the source in your project with:
+# Packages
+## Bower
+Leaflet.StyleEditor is also a registered package in [Bower](https://bower.io/) (based on [nodejs](https://nodejs.org/)). Integrate the source in your project with:
 ```
 npm install -g bower
 bower install Leaflet.StyleEditor
 ```
+
+## npm
+Leaflet.StyleEditor is also a registered [node module](https://www.npmjs.com/package/leaflet-styleeditor)
+```
+npm install leaflet-styleeditor
+```
+
+# Leaflet.Draw
+When using [Leaflet.draw](https://github.com/Leaflet/Leaflet.draw) most people will want to set `useGrouping: false` in the settings to prevent styling all added
+elements.
+
+To let Leaflet.Draw directly show a styled marker set `marker { icon: styleEditor.getDefaultIcon() }` when
+initializing Leaflet.Draw.
+
 
 Development
 ----
@@ -121,8 +135,8 @@ All Marker need to extend [L.StyleEditor.marker.Marker](https://github.com/dwilh
 At a minimum a new Marker implementation **needs to provide these functions**:
 * createMarkerIcon(iconOptions)
 
-   Creates an Icon for the given Options (icon, iconColor, iconSize)  
-   Must return an instance of [L.Icon](http://leafletjs.com/reference-1.2.0.html#icon) (or subclasses)
+   Creates an Icon for the given Options (icon, iconColor, iconSize)
+   Must return an instance of [L.Icon](https://leafletjs.com/reference-1.2.0.html#icon) (or subclasses)
 
 * createSelectHTML (parentUiElement, iconOptions, icon)
 
@@ -155,5 +169,8 @@ for a more complicated one see [IconElement](https://github.com/dwilhelm89/Leafl
 
 Authors
 -----
-Dennis Wilhelm, 2014  
-Felix Höffken
+
+- Dennis Wilhelm, 2014-2018
+- Nikolaus Krismer
+- Felix Höffken
+- Daniel Berthereau, 2018
